@@ -1,0 +1,61 @@
+@import "tailwindcss";
+
+@theme {
+  /* ── Light theme ─────────────────────────────────────────────── */
+  --color-abyss: #f6f8fb; /* page background */
+  --color-panel: #ffffff; /* cards */
+  --color-panel2: #eef2f8; /* inner tiles / soft surfaces */
+  --color-edge: #dce3ee; /* hairline borders */
+  --color-ink: #17233c; /* primary text */
+  --color-dim: #5f6f88; /* secondary text */
+  --color-lime: #65a30d; /* primary accent */
+  --color-critical: #dc2626;
+  --color-warning: #d97706;
+  --color-normal: #059669;
+  --color-stale: #7c3aed;
+  --color-peri: #0284c7;
+}
+
+html,
+body,
+#root {
+  height: 100%;
+}
+
+body {
+  background:
+    radial-gradient(1200px 600px at 80% -10%, rgba(2, 132, 199, 0.06), transparent),
+    radial-gradient(900px 500px at -10% 110%, rgba(101, 163, 13, 0.05), transparent),
+    var(--color-abyss);
+  color: var(--color-ink);
+  font-family: ui-sans-serif, system-ui, "Segoe UI", Roboto, sans-serif;
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+::-webkit-scrollbar-thumb {
+  background: #c6d0df;
+  border-radius: 6px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #aab8cc;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+@keyframes pulse-dot {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.35; }
+}
+.pulse-dot {
+  animation: pulse-dot 2s ease-in-out infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .pulse-dot {
+    animation: none;
+  }
+}
